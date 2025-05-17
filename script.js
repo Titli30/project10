@@ -1,6 +1,6 @@
 function startBuilding() {
   document.getElementById("hero").style.display = "none";
-  document.getElementById("builder").style.display = "block"
+  document.getElementById("builder").style.display = "block";
 }
 
 function addExperience() {
