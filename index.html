@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Resume Builder</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+</head>
+<body>
+
+  <section id="hero">
+    <h1>Create Your Professional Resume</h1>
+    <p>Build a job-winning resume in minutes with live preview and customizable templates.</p>
+    <button onclick="startBuilding()">Start Building</button>
+    <div class="switchers">
+      <a href="#">Template Switcher</a> | 
+      <a href="#">Theme Switcher</a>
+    </div>
+  </section>
+
+  <main id="builder" style="display: none;">
+    <form id="resumeForm">
+      <input type="file" id="profileImage" accept="image/*" />
+      <input type="text" id="fullName" placeholder="Your Name" required />
+      <input type="text" id="title" placeholder="Job Title" required />
+      <textarea id="profile" placeholder="Profile Summary" required></textarea>
+      <input type="text" id="guardian" placeholder="Guardian Name" />
+      <input type="email" id="email" placeholder="Email" required />
+      <input type="text" id="phone" placeholder="Phone" required />
+      <input type="text" id="github" placeholder="GitHub Link (optional)" />
+      <input type="text" id="address" placeholder="Address" required />
+
+      <div id="experienceSection">
+        <h3>Work Experience</h3>
+        <div class="exp-entry">
+          <input type="text" class="jobTitle" placeholder="Job Title" />
+          <input type="text" class="company" placeholder="Company Name" />
+          <input type="text" class="duration" placeholder="Duration" />
+          <textarea class="jobDetails" placeholder="Job Responsibilities"></textarea>
+        </div>
+      </div>
+      <button type="button" onclick="addExperience()">Add Experience</button>
+
+      <div id="educationSection">
+        <h3>Education</h3>
+        <div class="edu-entry">
+          <input type="text" class="degree" placeholder="Degree" />
+          <input type="text" class="institution" placeholder="Institution" />
+          <input type="text" class="eduDuration" placeholder="Duration" />
+          <input type="text" class="grade" placeholder="Grade" />
+        </div>
+      </div>
+      <button type="button" onclick="addEducation()">Add Education</button>
+
+      <div id="projectSection">
+        <h3>Projects</h3>
+        <div class="project-entry">
+          <input type="text" class="projectTitle" placeholder="Project Title" />
+          <textarea class="projectDesc" placeholder="Description"></textarea>
+          <input type="text" class="projectLink" placeholder="Project Link (optional)" />
+        </div>
+      </div>
+      <button type="button" onclick="addProject()">Add Project</button>
+
+      <textarea id="skills" placeholder="Skills (comma separated)" required></textarea>
+      <textarea id="languages" placeholder="Languages (comma separated)" required></textarea>
+      <textarea id="hobbies" placeholder="Hobbies (comma separated)"></textarea>
+
+      <button type="submit">Generate Resume</button>
+      <button type="button" onclick="downloadPDF()">Download PDF</button>
+    </form>
+
+    <div id="resumeOutput"></div>
+  </main>
+
+  <footer>
+    © 2025 Your Name | Built with HTML, CSS & JS |
+    <a href="https://github.com/yourusername" target="_blank">GitHub</a>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
